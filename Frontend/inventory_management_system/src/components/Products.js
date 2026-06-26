@@ -21,13 +21,12 @@ export default function Products() {
 
             const data = await res.json();
 
-            if (if (res.ok) {) {
-                console.log("Data Retrieved.");
-                setProductData(data);
-            }
-            else {
-                console.log("Something went wrong. Please try again.");
-            }
+           if (res.ok) {
+    console.log("Data Retrieved.");
+    setProductData(data);
+} else {
+    console.log("Something went wrong. Please try again.");
+}
         } catch (err) {
             console.log(err);
         }
@@ -88,7 +87,7 @@ export default function Products() {
                                                 <td>{element.ProductBarcode}</td>
 
                                                 <td><NavLink to={`/updateproduct/${element._id}`} className="btn btn-primary"><i className="fa-solid fa-pen-to-square"></i></NavLink></td>
-                                                <td><button className="btn btn-danger" onClick={() => deleteProduct(element._id)}><i class="fa-solid fa-trash"></i></button></td>
+                                                <td><button className="btn btn-danger" onClick={() => deleteProduct(element._id)}><i className="fa-solid fa-trash"></i></button></td>
 
                                             </tr>
                                         </>
