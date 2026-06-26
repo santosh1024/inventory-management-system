@@ -32,7 +32,7 @@ router.get('/products', async (req, res) => {
     try {
         const getProducts = await products.find({})
         console.log(getProducts);
-        res.status(201).json(getProducts);
+        res.status(200).json(getProducts);;
     }
     catch (err) {
         console.log(err);
@@ -45,7 +45,7 @@ router.get('/products/:id', async (req, res) => {
     try {
         const getProduct = await products.findById(req.params.id);
         console.log(getProduct);
-        res.status(201).json(getProduct);
+        res.status(200).json(getProduct);;
     }
     catch (err) {
         console.log(err);

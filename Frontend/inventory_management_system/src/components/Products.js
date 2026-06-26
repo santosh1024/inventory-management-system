@@ -12,7 +12,7 @@ export default function Products() {
     const getProducts = async (e) => {
 
         try {
-            const res = await fetch("http://localhost:3001/products", {
+            const res = await fetch("https://inventory-management-system-enid.onrender.com/products", {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -21,7 +21,7 @@ export default function Products() {
 
             const data = await res.json();
 
-            if (res.status === 201) {
+            if (if (res.ok) {) {
                 console.log("Data Retrieved.");
                 setProductData(data);
             }
@@ -35,7 +35,7 @@ export default function Products() {
 
     const deleteProduct = async (id) => {
 
-        const response = await fetch(`http://localhost:3001/deleteproduct/${id}`, {
+        const response = await fetch(`https://inventory-management-system-enid.onrender.com/deleteproduct/${id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
